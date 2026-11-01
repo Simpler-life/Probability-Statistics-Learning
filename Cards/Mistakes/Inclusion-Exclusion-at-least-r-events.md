@@ -18,10 +18,19 @@ source:
   - Learning conversation 2026-09-24
 related: []
 created: 2026-09-24
-updated: 2026-09-24
+updated: 2026-11-01
 ---
 
 # 把“至少 r 个事件发生”直接套成普通容斥
+
+## Original Problem｜完整原题
+
+A4. 设 $A,B,C$ 为 3 个随机事件，请用事件的运算关系式表示：
+
+1. $A,B,C$ 至少有 2 个发生；
+2. $A,B,C$ 最多有 1 个发生；
+3. $A,B,C$ 恰有 1 个不发生；
+4. $A,B,C$ 至少有 1 个不发生。
 
 ## Context
 
