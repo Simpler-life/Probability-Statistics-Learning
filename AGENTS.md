@@ -106,3 +106,67 @@ Before commit/push:
 1. summarize modified files;
 2. inspect diff;
 3. check unrelated changes.
+
+
+## Markdown + LaTeX Rendering Rules
+
+When generating or editing `.md` files, prioritize correct rendering in GitHub Markdown and common Markdown renderers.
+
+1. Inline math must use `$...$`.
+
+   Example: `$P(A\\cup B)$`
+
+2. Ordinary display math may use a block with `$$` on separate lines:
+
+   ```text
+   $$
+   P(A\\cup B)
+   =
+   P(A)+P(B)-P(A\\cap B)
+   $$
+   ```
+
+   The opening and closing `$$` must each occupy their own line.
+
+3. If a Chinese punctuation mark is immediately followed by a `$$` math block, insert at least one space or, preferably, a line break after the Chinese punctuation before `$$`.
+
+   Prefer:
+
+   ```text
+   因此：
+
+   $$
+   P(A\\cup B)=...
+   $$
+   ```
+
+   Do not write `因此：$$` on the same line.
+
+4. For complex display equations on GitHub, prefer a fenced `math` block:
+
+   ````markdown
+   ```math
+   P\\left(\\bigcup_{i=1}^n A_i\\right)
+   =
+   S_1-S_2+S_3-S_4+\\cdots
+   ```
+   ````
+
+5. Keep blank lines between headings, paragraphs, lists, and display-math blocks.
+
+6. Inline math must not span multiple lines. If a formula needs multiple lines, use display math.
+
+7. Prefer standard LaTeX commands such as `\\cup`, `\\cap`, `\\subseteq`, `\\ge`, `\\le`, `\\sum`, `\\binom{}{}`, `\\bigcup`, `\\bigcap`, `\\ldots`, and `\\cdots`.
+
+8. In GitHub Markdown, avoid fragile complex subscript expressions containing bare `<` or `>` when an equivalent formulation using `\\substack` or an index-set formulation is available.
+
+9. Before saving a Markdown file, check:
+   - every `$` and `$$` is paired;
+   - every fenced `math` block is closed;
+   - Chinese punctuation does not directly touch a following `$$`;
+   - block formulas have blank lines around them;
+   - braces are balanced;
+   - every `\\left` has a matching `\\right` where applicable;
+   - every `\\begin{...}` has a matching `\\end{...}`.
+
+10. Core principle: Markdown syntax, HTML parsing, and LaTeX syntax must not be allowed to interfere with one another. Prefer slightly more whitespace and a stable equivalent formula over a compact but fragile expression.
