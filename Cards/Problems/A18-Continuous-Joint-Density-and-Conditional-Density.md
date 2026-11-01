@@ -33,13 +33,13 @@ updated: 2026-11-01
 
 **A18.** 设二维连续型随机变量 $(X,Y)$ 的联合密度函数为
 
-$$
+```math
 f(x,y)=
 \begin{cases}
-\dfrac{2x+y}{4}, & 0<x<1,\ 0<y<2,\\
+\dfrac{2x+y}{4}, & 0\lt x\lt 1,\ 0\lt y\lt 2,\\
 0, & \text{其他}.
 \end{cases}
-$$
+```
 
 （1）分别求 $X$ 与 $Y$ 的边际密度函数；
 
@@ -72,105 +72,105 @@ $$
 
 由联合密度定义，$X$ 的边际密度是沿 $y$ 方向积分：
 
-$$
+```math
 \begin{aligned}
 f_X(x)
 &=\int_{-\infty}^{+\infty}f(x,y)\,dy\\
 &=\int_0^2\frac{2x+y}{4}\,dy\\
 &=\frac14\left[2xy+\frac{y^2}{2}\right]_0^2\\
-&=x+\frac12,\qquad 0<x<1.
+&=x+\frac12,\qquad 0\lt x\lt 1.
 \end{aligned}
-$$
+```
 
 因此：
 
-$$
+```math
 \boxed{f_X(x)=
 \begin{cases}
-x+\frac12,&0<x<1,\\
+x+\frac12,&0\lt x\lt 1,\\
 0,&\text{其他}.
 \end{cases}}
-$$
+```
 
 类似地，$Y$ 的边际密度是沿 $x$ 方向积分：
 
-$$
+```math
 \begin{aligned}
 f_Y(y)
 &=\int_{-\infty}^{+\infty}f(x,y)\,dx\\
 &=\int_0^1\frac{2x+y}{4}\,dx\\
 &=\frac14[x^2+xy]_0^1\\
-&=\frac{1+y}{4},\qquad 0<y<2.
+&=\frac{1+y}{4},\qquad 0\lt y\lt 2.
 \end{aligned}
-$$
+```
 
 所以：
 
-$$
+```math
 \boxed{f_Y(y)=
 \begin{cases}
-\dfrac{1+y}{4},&0<y<2,\\
+\dfrac{1+y}{4},&0\lt y\lt 2,\\
 0,&\text{其他}.
 \end{cases}}
-$$
+```
 
 校验：
 
-$$
+```math
 \int_0^1\left(x+\frac12\right)\,dx=1,
 \qquad
 \int_0^2\frac{1+y}{4}\,dy=1.
-$$
+```
 
 ### （2）条件密度函数
 
 若 $f_Y(y)>0$，则
 
-$$
+```math
 f_{X\mid Y}(x\mid y)=\frac{f(x,y)}{f_Y(y)}.
-$$
+```
 
 代入 $f_Y(y)=(1+y)/4$，得到：
 
-$$
+```math
 \boxed{
 f_{X\mid Y}(x\mid y)=
 \begin{cases}
-\dfrac{2x+y}{1+y},&0<x<1,\quad 0<y<2,\\
-0,&\text{其他 }x,\quad 0<y<2.
+\dfrac{2x+y}{1+y},&0\lt x\lt 1,\quad 0\lt y\lt 2,\\
+0,&\text{其他 }x,\quad 0\lt y\lt 2.
 \end{cases}}
-$$
+```
 
 这里条件变量 $y$ 只考虑 $0<y<2$；当 $f_Y(y)=0$ 时，不应直接用密度比值公式求条件密度。
 
 若 $f_X(x)>0$，则
 
-$$
+```math
 f_{Y\mid X}(y\mid x)=\frac{f(x,y)}{f_X(x)}.
-$$
+```
 
 代入 $f_X(x)=x+1/2$，得到：
 
-$$
+```math
 \boxed{
 f_{Y\mid X}(y\mid x)=
 \begin{cases}
-\dfrac{2x+y}{4x+2},&0<y<2,\quad 0<x<1,\\
-0,&\text{其他 }y,\quad 0<x<1.
+\dfrac{2x+y}{4x+2},&0\lt y\lt 2,\quad 0\lt x\lt 1,\\
+0,&\text{其他 }y,\quad 0\lt x\lt 1.
 \end{cases}}
-$$
+```
 
 验证对每个有效条件值积分为 $1$：
 
-$$
+```math
 \int_0^1\frac{2x+y}{1+y}\,dx
 =\frac{1+y}{1+y}=1,
-$$
+```
 
-$$
+```math
 \int_0^2\frac{2x+y}{4x+2}\,dy
 =\frac{4x+2}{4x+2}=1.
-$$
+```
 
 ### （3）条件概率
 
@@ -178,16 +178,16 @@ $$
 
 由上一问，固定 $y=0.5$：
 
-$$
+```math
 f_{X\mid Y}(x\mid0.5)
 =\frac{2x+0.5}{1.5}
 =\frac{4x+1}{3},
-\qquad 0<x<1.
-$$
+\qquad 0\lt x\lt 1.
+```
 
 因此：
 
-$$
+```math
 \begin{aligned}
 P(X\le0.5\mid Y=0.5)
 &=\int_0^{0.5}f_{X\mid Y}(x\mid0.5)\,dx\\
@@ -195,20 +195,20 @@ P(X\le0.5\mid Y=0.5)
 &=\frac13[2x^2+x]_0^{0.5}\\
 &=\boxed{\frac13}.
 \end{aligned}
-$$
+```
 
 再计算 $P(Y\le0.5\mid X=0.5)$。
 
 固定 $x=0.5$：
 
-$$
+```math
 f_{Y\mid X}(y\mid0.5)
-=\frac{1+y}{4},\qquad 0<y<2.
-$$
+=\frac{1+y}{4},\qquad 0\lt y\lt 2.
+```
 
 故：
 
-$$
+```math
 \begin{aligned}
 P(Y\le0.5\mid X=0.5)
 &=\int_0^{0.5}f_{Y\mid X}(y\mid0.5)\,dy\\
@@ -216,7 +216,7 @@ P(Y\le0.5\mid X=0.5)
 &=\frac14\left[y+\frac{y^2}{2}\right]_0^{0.5}\\
 &=\boxed{\frac5{32}}.
 \end{aligned}
-$$
+```
 
 **注意：** 连续型随机变量在单点 $Y=0.5$ 处通常满足 $P(Y=0.5)=0$，不能将离散型的普通条件概率商式直接用于这一零概率事件。此处通过条件密度（联合密度除以边际密度）定义适当版本的条件分布。
 
@@ -224,32 +224,32 @@ $$
 
 **条件密度：**
 
-$$
+```math
 f_{X\mid Y}(x\mid y)
-$$
+```
 
 表示“已知 $Y=y$ 的条件下，$X$ 在 $x$ 处的条件密度”。其中 $x$ 是被研究的取值，$y$ 是条件值；竖线表示“在……条件下”，不是除号。
 
 **条件分布函数：**
 
-$$
+```math
 F_{X\mid Y}(x\mid y)=P(X\le x\mid Y=y).
-$$
+```
 
 上式作为事件条件概率的普通定义适用于 $P(Y=y)>0$ 的情况；若 $Y$ 连续且单点概率为零，则使用由条件密度得到的条件分布函数：
 
-$$
+```math
 F_{X\mid Y}(x\mid y)
 =\int_{-\infty}^{x} f_{X\mid Y}(t\mid y)\,dt.
-$$
+```
 
 **条件值固定为 $0$ 时，两种常用记法：**
 
-$$
+```math
 F_{X\mid Y=0}(x)
 \quad\text{与}\quad
 F_{X\mid Y}(x\mid0)
-$$
+```
 
 二者表示同一条件分布函数。老师常把“给定的取值”写在括号的竖线右侧，因而 A12 的最终答案也可写作 $F_{X\mid Y}(x\mid0)$。离散与连续均可用此类记法。下标标明“研究谁、条件是谁”，括号标明“具体取值”。
 
