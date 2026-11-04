@@ -48,7 +48,7 @@ $$
 
 由 $X\sim U(-1,2)$，知
 
-$$
+```math
 f_X(x)=
 \begin{cases}
 \frac13,&-1\lt x\lt 2,\\
@@ -74,7 +74,7 @@ $$
 
 当 $y\ge2$ 时，$F_Y(y)=1$。综上，
 
-$$
+```math
 F_Y(y)=
 \begin{cases}
 0,&y\lt 0,\\
