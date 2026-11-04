@@ -3,7 +3,7 @@ type: mistake
 subject: Probability and Mathematical Statistics
 chapter: Chapter 3
 topic: [Joint Density, Double Integral, Region, Order of Integration, Marginal Density]
-tags: [double-integral, integration-order, limits, curved-region, original-quiz, final-review-priority]
+tags: [double-integral, integration-order, limits, curved-region, marginal-density, support-restriction, original-quiz, final-review-priority]
 difficulty: medium
 exam_priority: high
 status: review
@@ -30,7 +30,7 @@ c,&y^2\lt x\lt4,\\
 \end{cases}
 ~~~
 
-历年题完整题干另有求边际密度、条件概率、变量函数分布及独立性判断等小问；**本轮实际练习的是第（1）问求 $c$，接下来才要求 $f_Y(y)$**。
+历年题完整题干另有求边际密度、条件概率、变量函数分布及独立性判断等小问；**本轮已练习第（1）、（2）问，第（2）问边际密度第一次做错，尚待复测。**
 
 ## Attempt / Wrong Idea｜真实首次作答
 
@@ -82,7 +82,7 @@ D=\{(x,y):y^2\lt x\lt4\}.
 \boxed{c=\frac{3}{32}}.
 ~~~
 
-## Transfer｜第（2）问边际密度（留待本人无提示作答）
+## 第（2）问：边际密度漏掉联合密度的非零区域【真实错误】
 
 保持 $y$ 不动、对 $x$ 积分：
 
@@ -91,7 +91,26 @@ f_Y(y)=\int_{y^2}^{4}f(x,y)\,dx,
 \qquad -2\lt y\lt2.
 ~~~
 
-考试时必须补写密度支持区间外为 $0$，且不应再对 $y$ 积分。此处只记方法，**不把第（2）问误记为用户已经独立解对**。
+手写先正确写出边际密度的全轴积分定义，但代入时把联合密度的常数 $3/32$ 误当成整个实数轴上都成立，**没有限制 $y^2\lt x\lt4$ 这一非零区域**，结果错误地得到常数 $3/8$。
+
+这里的关键不是积分公式记错，而是 $f(x,y)$ **在区域外为零**。固定 $y$ 时，只有 $y^2\lt x\lt4$ 才贡献概率；当 $y$ 不在 $(-2,2)$ 内，整个积分为零。
+
+正确的完整边际密度：
+
+~~~math
+f_Y(y)=
+\begin{cases}
+\frac{3}{32}(4-y^2),&-2\lt y\lt2,\\
+0,&\text{其他}.
+\end{cases}
+~~~
+
+考试写法：先写 $f_Y(y)=\int_{-\infty}^{+\infty}f(x,y)\,dx$，随后对 $-2\lt y\lt2$ 改为 $\int_{y^2}^{4}\frac3{32}\,dx$，最后补全其他情况。
+
+**验证：** 结果应随横向切片的长度 $4-y^2$ 变化，且积分为 1。若写成常数 $3/8$，在 $(-2,2)$ 上的总积分将为 $3/2$，不满足归一化。
+
+**实际状态：** 第（1）问已重新独立算对 $c=3/32$；第（2）问首次作答错误，尚未独立复测通过。
+
 
 ## Exam Writing Checklist｜考场防错
 
@@ -100,7 +119,8 @@ f_Y(y)=\int_{y^2}^{4}f(x,y)\,dx,
 3. 固定外层变量，沿内层变量方向切片，找入点和出点。
 4. **内层积分界限可以含外层变量，外层界限不能含内层变量。**
 5. 交换积分次序必须重新写两层界限，不能只交换 $dx$ 与 $dy$。
-6. 边际密度只积分掉另外一个变量，并补全有效区间外为 $0$ 的分段。
+6. 边际密度公式虽然写成全轴积分，但代入分段联合密度时必须缩到非零区域。
+7. 边际密度只积分掉另外一个变量，并补全有效区间外为 $0$ 的分段。
 
 ## Open-Book Location
 
@@ -116,4 +136,4 @@ f_Y(y)=\int_{y^2}^{4}f(x,y)\,dx,
 
 > “怎么这个积分好像有点问题啊，但是这个先算后算不是应该是一样的，可以交换的吗？”
 
-我的区域图画得基本正确，真正出错的是把“可以换序”理解成“上下限可以不变或随意组合”。以后先确定**切片方向和区域交点**，再写积分界限；换序要重新从区域出发。仍待无提示独立复测，状态保留为 review。
+我的区域图画得基本正确，真正出错的是把“可以换序”理解成“上下限可以不变或随意组合”。以后先确定**切片方向和区域交点**，再写积分界限；换序要重新从区域出发。随后求边际密度时，又将联合密度常数误用于整个积分区域，得出错误的常数 $3/8$。两次错误都与“没有紧扣非零积分区域”有关。仍待无提示独立复测，状态保留为 review。
