@@ -23,6 +23,11 @@ updated: 2026-11-05
 <img width="1564" height="1232" alt="ad5191779431ee06dfce818504830623" src="https://github.com/user-attachments/assets/0f238644-eaa4-41d8-ade7-b43b22263dd1" />
 
 
+## 错误答案
+<img width="1250" height="916" alt="image" src="https://github.com/user-attachments/assets/e8f2702e-b94e-4a7f-8b42-35bf38dc85a2" />
+<img width="1236" height="888" alt="image" src="https://github.com/user-attachments/assets/35900ce3-7f8f-4852-a53d-9faa80223e52" />
+
+
 ## Standard Solution｜标准书写
 
 ### （1）归一化求 c
