@@ -20,23 +20,8 @@ updated: 2026-11-05
 
 ## Original Problem｜原题
 
-设二维连续型随机变量 $(X,Y)$ 的联合概率密度为：
+<img width="1564" height="1232" alt="ad5191779431ee06dfce818504830623" src="https://github.com/user-attachments/assets/0f238644-eaa4-41d8-ade7-b43b22263dd1" />
 
-```math
-f_{X,Y}(x,y)=
-\begin{cases}
-c,&y^2\lt x\lt4,\\
-0,&\text{其他}.
-\end{cases}
-```
-
-求：
-
-1. 常数 $c$；
-2. $Y$ 的边际密度 $f_Y(y)$；
-3. $P(-0.5\lt Y\lt1.44\mid X=1)$；
-4. 令 $T=1$（$Y\gt0$），$T=0$（$Y\le0$），求 $Z=YT$ 的分布函数并判断 $Z$ 的分布类型；
-5. 令 $\xi=1$（$0\le Y\lt\sqrt X\lt2$），其他情况 $\xi=0$，判断 $\xi$ 与 $X$ 是否独立，说明理由。
 
 ## Standard Solution｜标准书写
 
