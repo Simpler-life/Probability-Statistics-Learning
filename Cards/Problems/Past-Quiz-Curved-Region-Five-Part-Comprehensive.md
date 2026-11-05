@@ -22,20 +22,20 @@ updated: 2026-11-05
 
 设二维连续型随机变量 $(X,Y)$ 的联合概率密度为：
 
-~~~math
+```math
 f_{X,Y}(x,y)=
 \begin{cases}
 c,&y^2\lt x\lt4,\\
 0,&\text{其他}.
 \end{cases}
-~~~
+```
 
 求：
 
 1. 常数 $c$；
 2. $Y$ 的边际密度 $f_Y(y)$；
 3. $P(-0.5\lt Y\lt1.44\mid X=1)$；
-4. 令 $T=1$（$Y>0$），$T=0$（$Y\le0$），求 $Z=YT$ 的分布函数并判断 $Z$ 的分布类型；
+4. 令 $T=1$（$Y\gt0$），$T=0$（$Y\le0$），求 $Z=YT$ 的分布函数并判断 $Z$ 的分布类型；
 5. 令 $\xi=1$（$0\le Y\lt\sqrt X\lt2$），其他情况 $\xi=0$，判断 $\xi$ 与 $X$ 是否独立，说明理由。
 
 ## Standard Solution｜标准书写
@@ -44,53 +44,53 @@ c,&y^2\lt x\lt4,\\
 
 由 $y^2\lt x\lt4$，可得 $-2\lt y\lt2$。所以：
 
-~~~math
+```math
 1=\int_{-2}^{2}\int_{y^2}^{4}c\,dx\,dy
 =c\int_{-2}^{2}(4-y^2)\,dy
 =\frac{32c}{3}.
-~~~
+```
 
 故 $c=3/32$。亦可换序写为 $\int_0^4\int_{-\sqrt x}^{\sqrt x}c\,dy\,dx$。
 
 ### （2）边际密度
 
-~~~math
+```math
 f_Y(y)=
 \begin{cases}
 \displaystyle\int_{y^2}^{4}\frac3{32}\,dx=\frac3{32}(4-y^2),&-2\lt y\lt2,\\
 0,&\text{其他}.
 \end{cases}
-~~~
+```
 
 为后续条件概率，也求出：
 
-~~~math
+```math
 f_X(x)=
 \begin{cases}
 \displaystyle\int_{-\sqrt x}^{\sqrt x}\frac3{32}\,dy=\frac3{16}\sqrt x,&0\lt x\lt4,\\
 0,&\text{其他}.
 \end{cases}
-~~~
+```
 
 ### （3）条件密度与条件概率
 
 由 $f_{Y\mid X}(y\mid x)=f_{X,Y}(x,y)/f_X(x)$：
 
-~~~math
+```math
 f_{Y\mid X}(y\mid x)=
 \begin{cases}
 \frac1{2\sqrt x},&0\lt x\lt4,\ -\sqrt x\lt y\lt\sqrt x,\\
-0,&\text{其他 $y$（在固定 $0\lt x\lt4$ 下）}.
+0,&\text{其他 } y\text{（固定 }0\lt x\lt4\text{ 时）}.
 \end{cases}
-~~~
+```
 
 给定 $X=1$，实际条件支持区间为 $-1\lt y\lt1$，因此：
 
-~~~math
+```math
 P(-0.5\lt Y\lt1.44\mid X=1)
 =\int_{-0.5}^{1}\frac12\,dy
 =\frac34.
-~~~
+```
 
 注意题给上限 $1.44$ 超出条件支持区间，上限必须截断到 $1$。
 
@@ -98,22 +98,22 @@ P(-0.5\lt Y\lt1.44\mid X=1)
 
 由于 $Z=\max(Y,0)$，所以 $P(Z=0)=P(Y\le0)=1/2$；其中 $f_Y$ 关于 $0$ 对称。对 $0\le z\lt2$：
 
-~~~math
+```math
 F_Z(z)=P(Z\le z)
 =\frac12+\int_0^z\frac3{32}(4-y^2)\,dy
 =\frac12+\frac{3z}{8}-\frac{z^3}{32}.
-~~~
+```
 
 完整分布函数：
 
-~~~math
+```math
 F_Z(z)=
 \begin{cases}
 0,&z\lt0,\\
 \frac12+\frac{3z}{8}-\frac{z^3}{32},&0\le z\lt2,\\
 1,&z\ge2.
 \end{cases}
-~~~
+```
 
 其在 $z=0$ 处发生大小为 $1/2$ 的跳跃，同时在 $(0,2)$ 内有连续变化，故 $Z$ 为**混合型分布**（离散质量与连续部分兼有）。
 
@@ -125,11 +125,11 @@ F_Z(z)=
 
 对任意 $0\lt x\lt4$：
 
-~~~math
+```math
 P(\xi=1\mid X=x)
 =\int_0^{\sqrt x}\frac1{2\sqrt x}\,dy
 =\frac12=P(\xi=1).
-~~~
+```
 
 且 $P(\xi=0\mid X=x)=1/2=P(\xi=0)$，所以 $\xi$ 与 $X$ **独立**。
 
