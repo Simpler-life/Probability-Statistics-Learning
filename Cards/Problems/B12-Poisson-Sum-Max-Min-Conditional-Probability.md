@@ -40,7 +40,7 @@ updated: 2026-11-07
 
 ## Prerequisite｜泊松分布速补
 
-若 $`X\sim\operatorname{Pois}(\lambda)`$，$`\lambda>0`$，则
+若 $`X\sim\mathrm{Pois}(\lambda)`$，$`\lambda>0`$，则
 
 $$
 P(X=k)=\frac{\lambda^k}{k!}e^{-\lambda},\quad k=0,1,2,\ldots
@@ -61,7 +61,7 @@ $$
 性质：相互独立的泊松变量之和仍是泊松分布，参数相加。因此
 
 $$
-S=\sum_{i=1}^{10}X_i\sim\operatorname{Pois}(10\lambda).
+S=\sum_{i=1}^{10}X_i\sim\mathrm{Pois}(10\lambda).
 $$
 
 泊松分布的均值、方差均为 $`\lambda`$。不要与二项分布 $`B(n,p)`$ 混淆。
@@ -70,7 +70,7 @@ $$
 
 ### （1）十页错误总数至少为 2
 
-由泊松可加性，$`S\sim\operatorname{Pois}(10\lambda)`$，求补事件：
+由泊松可加性，$`S\sim\mathrm{Pois}(10\lambda)`$，求补事件：
 
 $$
 \begin{aligned}
@@ -83,7 +83,7 @@ $$
 
 ### （2）十页中至少有一页出现 2 个或以上错误
 
-设 $`A=\{\max_iX_i\ge2\}`$。
+设 $`A=\lbrace \max_iX_i\ge2\rbrace `$。
 
 $$
 \begin{aligned}
@@ -101,7 +101,7 @@ $$
 设
 
 $$
-A=\{\max_iX_i\ge2\},\qquad B=\{\min_iX_i=0\}.
+A=\lbrace \max_iX_i\ge2\rbrace ,\qquad B=\lbrace \min_iX_i=0\rbrace .
 $$
 
 目标：
