@@ -30,7 +30,7 @@ updated: 2026-11-14
 
 B12：袋中有 15 个球，其中 $a$ 个白球，其余黑球；无放回随机抽取 $n$ 次，每次一个，记白球数为 $\xi_n$。已知 $E(\xi_2)=4/3$，求 $a$。
 
-B18：承 B12，当 $n=2$ 时，求 $\operatorname{Var}(\xi_2)$。
+B18：承 B12，当 $n=2$ 时，求 $\mathrm{Var}(\xi_2)$。
 
 本轮重点：**不依赖超几何分布的期望公式，弄清为何第二次抽白球的无条件概率仍是 $a/15$。**
 
@@ -133,11 +133,11 @@ E(\xi_2^2)=0^2\cdot\frac2{21}+1^2\cdot\frac{10}{21}+2^2\cdot\frac37=\frac{46}{21
 因此：
 
 ```math
-\operatorname{Var}(\xi_2)=E(\xi_2^2)-[E(\xi_2)]^2
+\mathrm{Var}(\xi_2)=E(\xi_2^2)-[E(\xi_2)]^2
 ```
 
 ```math
-\operatorname{Var}(\xi_2)=\frac{46}{21}-\left(\frac43\right)^2=\boxed{\frac{26}{63}}
+\mathrm{Var}(\xi_2)=\frac{46}{21}-\left(\frac43\right)^2=\boxed{\frac{26}{63}}
 ```
 
 无需背超几何分布方差公式。注意方差不能像期望一样在不独立时直接相加，必须考虑协方差；本题用分布律即可。
