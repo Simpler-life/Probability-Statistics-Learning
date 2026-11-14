@@ -56,14 +56,17 @@ B18：承 B12，当 $n=2$ 时，求 $\operatorname{Var}(\xi_2)$。
 ### 全概率公式证明
 
 ```math
-\begin{aligned}
-P(B)
-&=P(B\mid A)P(A)+P(B\mid A^c)P(A^c)\\
-&=\frac{a-1}{14}\cdot\frac a{15}
-+\frac{a}{14}\cdot\frac{15-a}{15}\\
-&=\frac{a(a-1)+a(15-a)}{210}\\
-&=\boxed{\frac a{15}}.
-\end{aligned}
+P(B)=P(B\mid A)P(A)+P(B\mid A^c)P(A^c)
+```
+
+代入条件概率并化简：
+
+```math
+P(B)=\frac{a-1}{14}\cdot\frac{a}{15}+\frac{a}{14}\cdot\frac{15-a}{15}
+```
+
+```math
+P(B)=\frac{a(a-1)+a(15-a)}{210}=\boxed{\frac{a}{15}}
 ```
 
 直觉：第一次白球，第二次白球条件概率下降；第一次黑球，则上升。两种可能按概率加权，边际概率仍是 $a/15$。
@@ -75,10 +78,7 @@ P(B)
 定义：
 
 ```math
-X_i=\begin{cases}
-1,&\text{第 }i\text{ 次抽到白球},\\
-0,&\text{第 }i\text{ 次抽到黑球}.
-\end{cases}
+X_i=\mathbf{1}_{\{\text{第 }i\text{ 次抽到白球}\}}
 ```
 
 $\xi_2=X_1+X_2$。由于不知道此前抽到了什么时，每个位置为白球的概率均为 $a/15$：
@@ -90,11 +90,7 @@ E(X_1)=E(X_2)=\frac a{15}.
 期望线性性质**无需独立性**：
 
 ```math
-\begin{aligned}
-E(\xi_2)
-&=E(X_1)+E(X_2)\\
-&=\frac{2a}{15}=\frac43.
-\end{aligned}
+E(\xi_2)=E(X_1)+E(X_2)=\frac{2a}{15}=\frac43.
 ```
 
 得到：
@@ -114,12 +110,7 @@ P(\xi_2=k)=\frac{\binom{a}{k}\binom{15-a}{2-k}}{\binom{15}{2}}.
 所以：
 
 ```math
-\begin{aligned}
-E(\xi_2)
-&=P(\xi_2=1)+2P(\xi_2=2)\\
-&=\frac{a(15-a)+a(a-1)}{105}
-=\frac{2a}{15}.
-\end{aligned}
+E(\xi_2)=P(\xi_2=1)+2P(\xi_2=2)=\frac{a(15-a)+a(a-1)}{105}=\frac{2a}{15}.
 ```
 
 ## Correct Solution｜B18：用分布律求方差
@@ -136,15 +127,17 @@ P(\xi_2=k)=\frac{\binom{10}{k}\binom{5}{2-k}}{\binom{15}{2}},
 | 概率 | $2/21$ | $10/21$ | $3/7$ |
 
 ```math
-\begin{aligned}
-E(\xi_2^2)
-&=0^2\frac2{21}+1^2\frac{10}{21}+2^2\frac37\\
-&=\frac{46}{21},\\
-\operatorname{Var}(\xi_2)
-&=E(\xi_2^2)-[E(\xi_2)]^2\\
-&=\frac{46}{21}-\left(\frac43\right)^2\\
-&=\boxed{\frac{26}{63}}.
-\end{aligned}
+E(\xi_2^2)=0^2\cdot\frac2{21}+1^2\cdot\frac{10}{21}+2^2\cdot\frac37=\frac{46}{21}
+```
+
+因此：
+
+```math
+\operatorname{Var}(\xi_2)=E(\xi_2^2)-[E(\xi_2)]^2
+```
+
+```math
+\operatorname{Var}(\xi_2)=\frac{46}{21}-\left(\frac43\right)^2=\boxed{\frac{26}{63}}
 ```
 
 无需背超几何分布方差公式。注意方差不能像期望一样在不独立时直接相加，必须考虑协方差；本题用分布律即可。
