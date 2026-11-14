@@ -33,21 +33,21 @@ updated: 2026-11-14
 
 设二维随机变量 $(X,Y)$ 的联合概率密度为：
 
-$$
+```math
 f(x,y)=
 \begin{cases}
-\dfrac{2}{x}e^{-2x},&0<x<+\infty,\quad 0<y<x,\\
+\dfrac{2}{x}e^{-2x},&0\lt x\lt +\infty,\quad 0\lt y\lt x,\\
 0,&\text{其他}.
 \end{cases}
-$$
+```
 
 求 $E(X)$、$E(3X-1)$ 和 $E(XY)$。
 
 **积分区域**：
 
-$$
-D=\{(x,y):0<x<+\infty,\ 0<y<x\}.
-$$
+```math
+D=\{(x,y):0\lt x\lt +\infty,\ 0\lt y\lt x\}.
+```
 
 固定 $x$ 后，内层变量 $y$ 的上下限为 $0,x$；不是 $0,+\infty$。
 
@@ -61,7 +61,7 @@ $$
 
 ## Recognition
 
-见到 $x^n e^{-ax}$（$n$ 为非负整数，$a>0$）：
+见到 $x^n e^{-ax}$（$n$ 为非负整数，$a\gt 0$）：
 
 1. 多项式 $x^n$ 连续求导最终为 $0$；
 2. 指数函数 $e^{-ax}$ 可连续积分；
@@ -81,20 +81,20 @@ $$
 
 先对 $y$ 积分：
 
-$$
+```math
 \begin{aligned}
 E(X)
 &=\int_0^\infty\int_0^x
 x\frac{2}{x}e^{-2x}\,dy\,dx\\
 &=\int_0^\infty 2xe^{-2x}\,dx.
 \end{aligned}
-$$
+```
 
 **必须展开的分部积分：**
 
 取 $u=x$、$dv=2e^{-2x}\,dx$，得 $du=dx$、$v=-e^{-2x}$。所以：
 
-$$
+```math
 \begin{aligned}
 E(X)
 &=\left[-xe^{-2x}\right]_0^\infty
@@ -102,30 +102,30 @@ E(X)
 &=0+\left[-\frac12e^{-2x}\right]_0^\infty\\
 &=\frac12.
 \end{aligned}
-$$
+```
 
 第一项为零是由于 $\lim_{x\to\infty}x/e^{2x}=0$，且 $x=0$ 时为零。
 
 **快捷识别（验证）**：
 
-$$
+```math
 f_X(x)=\int_0^x\frac2x e^{-2x}\,dy=2e^{-2x},
-\quad x>0.
-$$
+\quad x\gt 0.
+```
 
 即 $X\sim\mathrm{Exp}(2)$（率参数 $\lambda=2$），故 $E(X)=1/2$。
 
 ### 2. 求 $E(3X-1)$
 
-$$
+```math
 E(3X-1)=3E(X)-1=\frac12.
-$$
+```
 
 线性性质不要求两个随机变量独立。
 
 ### 3. 求 $E(XY)$：先化成一元积分
 
-$$
+```math
 \begin{aligned}
 E(XY)
 &=\int_0^\infty\int_0^x
@@ -134,7 +134,7 @@ xy\frac2x e^{-2x}\,dy\,dx\\
 \left[\frac{y^2}{2}\right]_0^x\,dx\\
 &=\int_0^\infty x^2e^{-2x}\,dx.
 \end{aligned}
-$$
+```
 
 记 $I=\int_0^\infty x^2e^{-2x}\,dx$。
 
@@ -142,30 +142,30 @@ $$
 
 **第一次：** 取 $u=x^2$、$dv=e^{-2x}\,dx$，则
 
-$$
+```math
 du=2x\,dx,\qquad v=-\frac12e^{-2x}.
-$$
+```
 
 因此：
 
-$$
+```math
 \begin{aligned}
 I
 &=\left[-\frac12x^2e^{-2x}\right]_0^\infty
 +\int_0^\infty xe^{-2x}\,dx\\
 &=\int_0^\infty xe^{-2x}\,dx.
 \end{aligned}
-$$
+```
 
 **第二次：** 取 $u=x$、$dv=e^{-2x}\,dx$，则
 
-$$
+```math
 du=dx,\qquad v=-\frac12e^{-2x}.
-$$
+```
 
 于是：
 
-$$
+```math
 \begin{aligned}
 I
 &=\left[-\frac12xe^{-2x}\right]_0^\infty
@@ -173,7 +173,7 @@ I
 &=0+\frac12\left[-\frac12e^{-2x}\right]_0^\infty\\
 &=\frac14.
 \end{aligned}
-$$
+```
 
 这里两次产生的边界项都为 $0$，因为 $x^2/e^{2x}\to0$ 和 $x/e^{2x}\to0$。
 
@@ -196,7 +196,7 @@ $$
 
 因此：
 
-$$
+```math
 \begin{aligned}
 \int x^2e^{-2x}\,dx
 &=-\frac12x^2e^{-2x}
@@ -205,11 +205,11 @@ $$
 &=-e^{-2x}\left(\frac{x^2}{2}+\frac{x}{2}
 +\frac14\right)+C.
 \end{aligned}
-$$
+```
 
 **最后别忘了代入定积分上下限：**
 
-$$
+```math
 \begin{aligned}
 I
 &=\left[
@@ -218,19 +218,19 @@ I
 &=0-\left(-\frac14\right)\\
 &=\frac14.
 \end{aligned}
-$$
+```
 
 **表格法的本质**不是新公式，而是把多次分部积分集中写出来。检查时要防止“表格交替符号”和“指数积分自带负号”混淆；两种负号都需要保留。
 
 ### 三问结果
 
-$$
+```math
 \boxed{
 E(X)=\frac12,\qquad
 E(3X-1)=\frac12,\qquad
 E(XY)=\frac14
 }
-$$
+```
 
 ## Calculation Skeleton
 
@@ -245,16 +245,16 @@ $$
 
 分部积分：
 
-$$
+```math
 \int u\,dv=uv-\int v\,du.
-$$
+```
 
-对于非负整数 $n$、$a>0$：
+对于非负整数 $n$、$a\gt 0$：
 
-$$
+```math
 \int_0^\infty x^n e^{-ax}\,dx
 =\frac{n!}{a^{n+1}}.
-$$
+```
 
 这个公式可以由连续分部积分得到。本题 $n=2,a=2$，所以积分为 $2!/2^3=1/4$。**现阶段应能推导，不应只记结果。**
 
