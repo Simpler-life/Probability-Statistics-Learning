@@ -31,6 +31,10 @@ updated: 2026-11-14
 
 ## Problem
 
+<img width="982" height="296" alt="image" src="https://github.com/user-attachments/assets/775e5063-8eda-4b73-9eed-8f652ac61264" />
+<img width="974" height="228" alt="image" src="https://github.com/user-attachments/assets/8bf536b1-2e79-4eee-94ce-14779a76b54e" />
+
+
 500 人需要检验是否患病，单人患病率为 20%。方案一是逐人化验，共 500 次；方案二把 500 人按每组 $k$ 人分组（$k>1$ 且 $500/k$ 为整数），每组先混合化验 1 次；若阳性，该组再逐人化验 $k$ 次；若阴性，该组无需进一步化验。比较平均化验次数，并选择合理分组大小。
 
 按题目中的常规模型，假定各人患病情况相互独立，且混检能准确判断该组是否至少有一人患病。
